@@ -1,0 +1,18 @@
+// masiva katru divu skaitlu reiz
+#include <iostream>
+
+int main() {
+    int arr1[10], multi = 0;
+    
+    std::cout << "Masivs:" << std::endl;
+    for(int i = 0; i < 10; i++){
+        std::cin >> arr1[i];
+}
+    std::cout << "Reizinājumi:"<< std::endl;
+    for(int i = 0; i < 10; i++){
+        multi = arr1[i] * arr1[i+1];
+        i = i + 1;
+        std::cout << multi << std::endl;
+}
+        
+    return 0;
