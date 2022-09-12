@@ -1,0 +1,26 @@
+#include <algorithm>
+#include <iostream>
+
+double largest_element(double arr[]) {
+    int temp;
+    for(int i = 0; i < 5; i++) {
+        if (arr[i] > arr[i+1] ) {
+            temp = arr[i];
+            std::cout << "Lielākais ir elements";
+        }
+    }
+    return temp;
+        
+}
+
+int main() {
+    double arr[5];
+    
+    std::cout << "Ievadi 5 elementus:" << std::endl;
+    for(int i = 0; i < 5; i++){
+    std::cin >> arr[i];
+    }
+    
+    std::cout << "Lielākais elements ir: ";
+    std::cout << largest_element(arr);
+}
