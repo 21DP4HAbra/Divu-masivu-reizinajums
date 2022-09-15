@@ -1,0 +1,26 @@
+#include <iostream>
+
+double compare(double first, double second) {
+    if(first>second){
+        std::cout << first << ">" << second <<std::endl;
+    
+    } else if (first < second){
+        std::cout << first << "<" << second << std::endl;
+    }
+        else{
+        std::cout << first << "=" << second << std::endl;
+    }
+}
+    
+int main(){
+    double first = 0;
+    double second = 0;
+    std::cout << "Ievadi 1. skaitli: ";
+    std::cin >> first;
+    std::cout << "Ievadi 2. skaitli: ";
+    std::cin >> second;
+    
+    compare(first, second);
+    
+    
+}
