@@ -1,0 +1,46 @@
+#include <iostream>
+#include <cstdlib>
+#include <windows.h>
+
+using namespace std;
+
+int Roulette(int betNumber, int betAmount) {
+    int money;
+    int Rnumber = 0;
+    int WinAmount = 0;
+    srand(time(0));
+    Rnumber = 1 + (rand() % 36);
+    cout << "Rolling..." << endl;
+    cout << "Ball landed on number " << Rnumber << endl;
+    if (betNumber == Rnumber) {
+        WinAmount = betAmount * 2;
+        money = money + WinAmount;
+        cout << "You won! Now you have $" << money << " in your bank account." << endl;
+    } else {
+        cout << "You lose! Better luck next time!" << "Now you have $" << money << " in your bank account." << endl;
+    }
+}
+
+int main() {
+    int money = 100;
+    int betAmount = 0;
+    int betNumber = 0;
+    cout << "Welcome to roulette!: " << endl;
+    cout << "On what nummber you are betting?: " << endl;
+    cin >> betNumber;
+    while (betNumber < 1 || betNumber > 36) {
+        cout << endl << "You must choose a valid number between 1 and 36!: " << endl << endl;
+        cout << "Please choose a number to place your bet on: " << endl;
+        cin >> betNumber;
+    }
+    cout << "How much money are you betting?: " << endl;
+    cin >> betAmount;
+    while (betAmount < 1 || betAmount > money) {
+        cout << endl << "You have only $" << money << " in your bank account: $" << endl;
+        cin >> betAmount;
+    }
+    money = money - betAmount;
+    Roulette(betNumber, betAmount);
+
+
+}
